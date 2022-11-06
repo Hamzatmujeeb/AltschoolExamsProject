@@ -7,8 +7,6 @@ const styles ={
     margin : 'auto',
     alignItems : 'center',
     paddingtop : '50px',
-    height : '200px',
-    width : '300px',
     height : '400px',
     width : "600px",
     
