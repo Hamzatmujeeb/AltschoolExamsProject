@@ -3,11 +3,41 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import Root from './routes/root';
+import CustomHook from './routes/CustomHook';
+import UseReducer from './routes/UseReducer';
+import ErrorBoundary from './components/ErrorBoundary';
+import PageNotFound from './routes/PageNotFound';
+
+// Routes
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <ErrorBoundary><Root /></ErrorBoundary>,
+  },
+  {
+    path: "/custom-hook",
+    element: <ErrorBoundary><CustomHook /></ErrorBoundary>,
+  },
+  {
+    path: "/use-reducer",
+    element: <ErrorBoundary><UseReducer /></ErrorBoundary>,
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
+    <React.StrictMode>
+      <RouterProvider router={router} />
   </React.StrictMode>
 );
 
