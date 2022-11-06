@@ -48,13 +48,7 @@ const styles ={
 export default function CustomHook() {
 
   
-  const [increment, decrement, reset, setValue, data] = useCustomHook();
-
-  const error = () => {
-    throw Error("This is an error")
-  }
-  
-  
+  const [increment, decrement, reset, setValue, data] = useCustomHook(); 
 
   return (
     <>
